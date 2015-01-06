@@ -8,8 +8,8 @@
         <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-2.2.1" />
         <option name="modules">
           <set>
-            <option value="/media/comun/dev/repos/Quadcopter" />
-            <option value="/media/comun/dev/repos/Quadcopter/app" />
+            <option value="/media/comun/dev/repos/arduino-android-bluetooth/android" />
+            <option value="/media/comun/dev/repos/arduino-android-bluetooth/android/app" />
           </set>
         </option>
       </GradleProjectSettings>

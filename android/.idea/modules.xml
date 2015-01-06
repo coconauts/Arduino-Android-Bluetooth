@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:///media/comun/dev/repos/Quadcopter/app/app.iml" filepath="/media/comun/dev/repos/Quadcopter/app/app.iml" />
+      <module fileurl="file:///media/comun/dev/repos/arduino-android-bluetooth/android/app/app.iml" filepath="/media/comun/dev/repos/arduino-android-bluetooth/android/app/app.iml" />
     </modules>
   </component>
 </project>
