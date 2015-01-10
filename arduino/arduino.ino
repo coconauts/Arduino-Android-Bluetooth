@@ -1,11 +1,11 @@
 #include <SoftwareSerial.h>
  
-SoftwareSerial Genotronex(10, 11); // RX, TX
+SoftwareSerial Genotronex(10, 11); // TX, RX
 
 #define MAX_BUFFER 4
  
-int motor = 12;    
-int pwm = 0;
+int motor = 9;    
+int speed = 0;
 char data;
 char* buffer;
 boolean receiving = false;
@@ -28,12 +28,12 @@ void loop()  {
          switch(data) {
             //3: End of transmission
             case 3:  receiving = false;  
-                    pwm = buffer2pwm(buffer);
+                    speed = buffer2int(buffer);
                                
                     Genotronex.print("Received: ");
                     Genotronex.print(buffer);
-                    Genotronex.print(", Pwm: ");
-                    Genotronex.println(pwm);
+                    Genotronex.print(", Speed: ");
+                    Genotronex.println(speed);
 
                      break; //end message
             default: if (receiving == false) resetData();
@@ -42,7 +42,7 @@ void loop()  {
                      receiving = true;          
           }
    }  
-  analogWrite(motor, pwm); 
+  analogWrite(motor, speed); 
   delay(10);                            
 }
 
@@ -51,7 +51,7 @@ void loop()  {
    pos = 0;
 }
     
-int buffer2pwm(char* buffer){
+int buffer2int(char* buffer){
   int i;
   sscanf(buffer, "%d", &i);
   return i;
